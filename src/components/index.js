@@ -11,3 +11,4 @@ export { default as SearchBar } from './root-components/SearchBar'
 
 export { default as Navbar } from './navBar'
 export { default as ThemeToggle } from './themeToggle'
+export { default as CollapseableCard } from './collapseCard'

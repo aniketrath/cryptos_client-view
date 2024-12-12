@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Text } from '../../components/index'
-import { 
+import {
   PriceStatistics,
   GraphStatistics,
-  GlobalStatistics } from './components'
+  GlobalStatistics,
+  SuggestionsComponent
+} from './components/index'
 import {
   fetchBTCDetails,
   fetchETHDetails,
@@ -15,7 +17,7 @@ const RenderPage = () => {
   const [btcStat, setBTCStat] = useState();
   const [ethStat, setETHStat] = useState();
   const [globalStat, setGlobalStat] = useState();
-  const [Suggestions, setSuggestions] = useState();
+  const [suggestions, setSuggestions] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -59,9 +61,10 @@ const RenderPage = () => {
   if (loading) return <Box>Loading...</Box>;
 
   return (
-    <Box horizontal className='gap-5 pt-4 min-h-[89vh]'>
+    <Box horizontal className='gap-5 pt-4 max-h-[89vh]'>
       <Box className='min-w-fit shadow-glowLight dark:shadow-glowDark rounded-xl p-4 w-[20dvw]'>
         <Text className=' uppercase font-bold text-responsive text-center'> Suggestions </Text>
+        <SuggestionsComponent data={suggestions}/>
       </Box>
       <Box className='min-w-fit shadow-glowLight dark:shadow-glowDark rounded-xl p-4 flex-grow gap-4'>
         <Text className='uppercase text-responsive text-center font-bold'> btc | eth </Text>
@@ -70,7 +73,7 @@ const RenderPage = () => {
       </Box>
       <Box className='min-w-fit shadow-glowLight dark:shadow-glowDark rounded-xl p-4 w-[20dvw]'>
         <Text className='uppercase text-responsive font-bold text-center'>Market Today</Text>
-        <GlobalStatistics data={globalStat}/>
+        <GlobalStatistics data={globalStat} />
       </Box>
     </Box>
   )
