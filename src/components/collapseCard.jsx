@@ -33,7 +33,12 @@ const GraphComponent = ({ priceList }) => {
 }
 
 const CollapseCard = ({ name, logo, symbol, price }) => {
-
+    const formatName = (name) => {
+        if (name.length > 13) {
+            return name.slice(0, 10) + "...";
+        }
+        return name; // Return the original name if it's 13 characters or less
+    };
     return (
         <div className="collapse w-[18vw] min-h-fit 
         hover:outline hover:outline-2 hover:outline-accent">
@@ -42,7 +47,7 @@ const CollapseCard = ({ name, logo, symbol, price }) => {
             bg-base-300
             transition-all duration-300">
                 <Box horizontal className='justify-between'>
-                    <Text>{name}</Text>
+                    <Text>{formatName(name)}</Text>
                     <Text className='-mr-6 text-accent'>{symbol}</Text>
                 </Box>
             </div>

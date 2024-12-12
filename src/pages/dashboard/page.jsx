@@ -61,7 +61,7 @@ const RenderPage = () => {
   if (loading) return <Box>Loading...</Box>;
 
   return (
-    <Box horizontal className='gap-5 pt-4 max-h-[89vh]'>
+    <Box horizontal className='gap-5 pt-4 h-[89vh] max-h-[89vh]'>
       <Box className='min-w-fit shadow-glowLight dark:shadow-glowDark rounded-xl p-4 w-[20dvw]'>
         <Text className=' uppercase font-bold text-responsive text-center'> Suggestions </Text>
         <SuggestionsComponent data={suggestions}/>

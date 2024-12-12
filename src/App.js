@@ -3,14 +3,14 @@ import {
   Navbar
 } from './components/index'
 
-import { Dashboard } from './pages'
+import { Dashboard ,Market } from './pages'
 
 export default function App() {
   return (
     <div className='p-5 font-jetbrains'>
       <Navbar />
       <ThemeToggle />
-      <Dashboard/>
+      <Market/>
     </div>
 
   )
