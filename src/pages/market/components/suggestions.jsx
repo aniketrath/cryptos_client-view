@@ -16,7 +16,7 @@ const Suggestions = ({ data }) => {
             }
         };
 
-        fetchData(); // Fetch the data inside useEffect
+        fetchData();
     }, [data]); // Only run when `data` changes
 
     if (suggestionsData)
