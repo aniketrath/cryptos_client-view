@@ -29,3 +29,13 @@ export const fetchLossers = async () => {
         throw error;
     }
 };
+
+export const fetchAllCoins = async () => {
+    try {
+        const response = await axios.get('app/get/coin?id=all');
+        return response.data;
+    } catch (error) {
+        console.error("[API ERROR]", error.message || error);
+        throw error;
+    }
+};
