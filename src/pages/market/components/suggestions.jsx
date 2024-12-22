@@ -26,6 +26,7 @@ const Suggestions = ({ data }) => {
                     suggestionsData.map((e) => {
                         return <CollapseableCard
                             key={e._id}
+                            id = {e.id}
                             name={e.name}
                             logo={e.logo}
                             symbol={e.symbol}

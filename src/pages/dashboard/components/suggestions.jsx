@@ -29,7 +29,8 @@ const Suggestions = ({ data }) => {
                             name={e.name}
                             logo={e.logo}
                             symbol={e.symbol}
-                            price={e.ticker_history} />
+                            price={e.ticker_history}
+                            id={e.id} />
                     })
                 }
             </Box>

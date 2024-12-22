@@ -32,7 +32,9 @@ const GraphComponent = ({ priceList }) => {
     )
 }
 
-const CollapseCard = ({ name, logo, symbol, price }) => {
+const CollapseCard = ({ name, logo, symbol, price , id}) => {
+    console.log(id);
+    
     const formatName = (name) => {
         if (name.length > 13) {
             return name.slice(0, 10) + "...";
@@ -62,7 +64,7 @@ const CollapseCard = ({ name, logo, symbol, price }) => {
                     <GraphComponent priceList={price} />
                 </Box>
                 <Box horizontal className='mt-2'>
-                    <a className='text-accent text-[1.1rem] px-2 ' href="#">Details </a>
+                    <a className='text-accent text-[1.1rem] px-2 ' href={`/details?id=${id}`}>Details </a>
                     <ArrowUpRight className='-ml-1' size={"2.7vh"} color='#06b6d4' />
                 </Box>
 

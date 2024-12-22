@@ -4,7 +4,8 @@ import {
 } from './components/index'
 import {
   Dashboard,
-  Market
+  Market,
+  Stats
 } from './pages'
 import {
   BrowserRouter,
@@ -18,8 +19,9 @@ export default function App() {
       <Navbar />
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Dashboard/>}/>
-          <Route path='market' element={<Market/>}/>
+          <Route path='' element={<Dashboard />} />
+          <Route path='market' element={<Market />} />
+          <Route path='details' element={<Stats />} />
         </Routes>
       </BrowserRouter>
       <ThemeToggle />

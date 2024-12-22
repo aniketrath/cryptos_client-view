@@ -2,6 +2,9 @@ import React from 'react'
 import { LogIn } from 'lucide-react'
 
 export const NavBar = () => {
+    const handleClick = () => {
+        window.open(process.env.REACT_APP_ADMIN_PANEL, '_blank'); // Open the URL in a new tab
+      };
     return (
         <div className="navbar bg-base-100 rounded-xl shadow-glowLight dark:shadow-glowDark backdrop-blur-md">
             <div className="navbar-start">
@@ -23,9 +26,8 @@ export const NavBar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        {/* <li><a>Homepage</a></li>
-                        <li><a>Portfolio</a></li>
-                        <li><a>About</a></li> */}
+                        <li><a href='/'>Homepage</a></li>
+                        <li><a href='/market'>Market</a></li>
                     </ul>
                 </div>
             </div>
@@ -33,7 +35,7 @@ export const NavBar = () => {
                 <p className="btn btn-ghost text-responsive-content">Project CRYPTOS_</p>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-ghost text-responsive-content">
+                <button onClick={handleClick} className="btn btn-ghost text-responsive-content">
                     Admin Panel
                     <LogIn size={"3vh"} />
                 </button>

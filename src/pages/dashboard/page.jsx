@@ -11,7 +11,7 @@ import {
   fetchETHDetails,
   fetchGlobalDetails,
   fetchSuggestions
-} from './components/ApiCalls'
+} from '../APIs'
 
 const RenderPage = () => {
   const [btcStat, setBTCStat] = useState();
