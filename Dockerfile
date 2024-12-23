@@ -4,12 +4,13 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install --force
 COPY . .
-RUN npm run build
+# Declare build arguments (environment variables)
+ARG REACT_APP_API_URL
+ARG REACT_APP_ADMIN_PANEL
+RUN REACT_APP_API_URL=$REACT_APP_API_URL REACT_APP_ADMIN_PANEL=$REACT_APP_ADMIN_PANEL npm run build
 
 # Nginx stage
 FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
-# Expose port 80 for web access
 EXPOSE 80
-# Run nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
