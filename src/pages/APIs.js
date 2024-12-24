@@ -1,12 +1,8 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL, // Get base URL from environment variable
-});
-
 export const fetchSuggestions = async () => {
   try {
-    const response = await axiosInstance.get("app/suggestions");
+    const response = await axios.get("/app/suggestions");
     return response.data;
   } catch (error) {
     console.error("[API ERROR]", error.message || error);
@@ -16,7 +12,7 @@ export const fetchSuggestions = async () => {
 
 export const fetchGainers = async () => {
   try {
-    const response = await axiosInstance.get("/app/gainers");
+    const response = await axios.get("/app/gainers");
     return response.data;
   } catch (error) {
     console.error("[API ERROR]", error.message || error);
@@ -26,7 +22,7 @@ export const fetchGainers = async () => {
 
 export const fetchLossers = async () => {
   try {
-    const response = await axiosInstance.get("/app/losers");
+    const response = await axios.get("/app/losers");
     return response.data;
   } catch (error) {
     console.error("[API ERROR]", error.message || error);
@@ -36,7 +32,7 @@ export const fetchLossers = async () => {
 
 export const fetchAllCoins = async () => {
   try {
-    const response = await axiosInstance.get("/app/get/coin?id=all");
+    const response = await axios.get("/app/get/coin?id=all");
     return response.data;
   } catch (error) {
     console.error("[API ERROR]", error.message || error);
@@ -46,7 +42,7 @@ export const fetchAllCoins = async () => {
 
 export const fetchBTCDetails = async () => {
   try {
-    const response = await axiosInstance.get("/app/get/coin", {
+    const response = await axios.get("/app/get/coin", {
       params: { id: "btc-bitcoin" },
     });
     return response.data;
@@ -57,7 +53,7 @@ export const fetchBTCDetails = async () => {
 };
 export const fetchETHDetails = async () => {
   try {
-    const response = await axiosInstance.get("/app/get/coin", {
+    const response = await axios.get("/app/get/coin", {
       params: { id: "eth-ethereum" },
     });
     return response.data;
@@ -68,7 +64,7 @@ export const fetchETHDetails = async () => {
 };
 export const fetchGlobalDetails = async () => {
   try {
-    const response = await axiosInstance.get(`/app/global/status`);
+    const response = await axios.get(`/app/global/status`);
     return response.data;
   } catch (error) {
     console.error("[API ERROR]", error.message || error);
@@ -78,7 +74,7 @@ export const fetchGlobalDetails = async () => {
 
 export const fetchStats = async (id) => {
   try {
-    const response = await axiosInstance.get(`/app/get/coin?id=${id}`);
+    const response = await axios.get(`/app/get/coin?id=${id}`);
     return response.data;
   } catch (error) {
     console.error("[API ERROR]", error.message || error);
