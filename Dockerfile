@@ -2,7 +2,7 @@
 FROM node:18
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm install --force
 COPY . .
 ENV REACT_APP_API_URL=http://localhost
 EXPOSE 3000
