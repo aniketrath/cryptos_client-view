@@ -3,8 +3,7 @@ FROM node:18 AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
-COPY ./frontend ./
-
+COPY . .
 # Set the REACT_APP_URL environment variable
 ENV REACT_APP_URL=http://frontend.cryptos.com
 

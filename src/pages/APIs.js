@@ -16,7 +16,7 @@ export const fetchSuggestions = async () => {
 
 export const fetchGainers = async () => {
   try {
-    const response = await axiosInstance.get("app/gainers");
+    const response = await axiosInstance.get("/app/gainers");
     return response.data;
   } catch (error) {
     console.error("[API ERROR]", error.message || error);
@@ -26,7 +26,7 @@ export const fetchGainers = async () => {
 
 export const fetchLossers = async () => {
   try {
-    const response = await axiosInstance.get("app/losers");
+    const response = await axiosInstance.get("/app/losers");
     return response.data;
   } catch (error) {
     console.error("[API ERROR]", error.message || error);
@@ -36,7 +36,7 @@ export const fetchLossers = async () => {
 
 export const fetchAllCoins = async () => {
   try {
-    const response = await axiosInstance.get("app/get/coin?id=all");
+    const response = await axiosInstance.get("/app/get/coin?id=all");
     return response.data;
   } catch (error) {
     console.error("[API ERROR]", error.message || error);
