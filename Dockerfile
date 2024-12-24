@@ -5,7 +5,7 @@ COPY package*.json ./
 RUN npm install --force
 COPY . .
 # Set the REACT_APP_URL environment variable
-ENV REACT_APP_URL=http://frontend.cryptos.com
+ENV REACT_APP_API_URL=http://frontend.cryptos.com
 
 RUN npm run build
 FROM nginx:alpine
