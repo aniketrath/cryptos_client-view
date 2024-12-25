@@ -58,7 +58,7 @@ const GainersLosers = ({ type }) => {
         );
         setIterator([]); // Fallback to an empty array in case of an error
       } finally {
-        //setLoading(false); // Ensure loading is set to false after processing
+        setLoading(false); // Ensure loading is set to false after processing
       }
     };
 

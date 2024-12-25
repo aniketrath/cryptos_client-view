@@ -36,7 +36,7 @@ const Page = () => {
           setError("An unexpected error occurred. Please try again.");
         }
       } finally {
-        //setLoading(false); // Stop loading once the request completes
+        setLoading(false); // Stop loading once the request completes
       }
     };
     getStats();

@@ -67,7 +67,7 @@ const CoinCards = () => {
           setError("An unexpected error occurred. Please try again.");
         }
       } finally {
-        //setLoading(false); // Stop loading after fetching
+        setLoading(false); // Stop loading after fetching
       }
     };
     getStats();
