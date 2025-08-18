@@ -41,4 +41,7 @@ jobs:
           LOWERCASE_IMAGE_NAME=$(echo $IMAGE_NAME | tr '[:upper:]' '[:lower:]')
           COMMIT_SHA="${{ github.sha }}"
           TAG="${LOWERCASE_IMAGE_NAME}:${COMMIT_SHA::7}"
-          docker buildx build --file Dockerfile --tag $TAG --push .
+          LATEST_TAG="${LOWERCASE_IMAGE_NAME}:latest"
+
+          # Build and push the image with both the commit SHA and latest tags
+          docker buildx build --file Dockerfile --tag $TAG --tag $LATEST_TAG --push .
